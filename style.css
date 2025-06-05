@@ -19,24 +19,24 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    width: 70%;
 }
 
 .profile-card {
     background: linear-gradient(0deg, #000000ad, #2b2b2bad);
-    padding: 1.5rem;
-    border-radius: 1.5rem;
+    padding: 20px;
+    border-radius: 20px;
     text-align: center;
-    width: 35rem;
-    backdrop-filter: blur(0.5rem);
-    box-shadow: 0 0 1rem rgb(0, 0, 0);
+    width: 100%;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 5px rgb(0, 0, 0);
 }
 
 .profile-pic-wrapper {
     position: relative;
-    width: 10rem;
-    height: 10rem;
+    width: 30%;
     border-radius: 50%;
-    padding: 0.1rem;
+    padding: 2px;
     background: linear-gradient(0deg, #474747ad, #a5a5a5ad);
     justify-self: center;
     filter: drop-shadow(0 0 5px rgba(255,255,255, 0.5));
@@ -62,17 +62,17 @@ body {
 
 .username {
     font-family: 'Satoshi';
-    font-size: 3rem;
+    font-size: 50px;
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.9));
     margin: 0;
 }
 
 .username-particles {
     position: absolute;
-    left: 14.5rem;
-    top: 12rem;
-    width: 9rem;
-    height: 4rem;
+    left: 38%;
+    top: 54%;
+    width: 24%;
+    height: 20%;
     filter: drop-shadow(0 0 5px rgba(255,255,255, 0.5)) opacity(0.7);
 }
 
@@ -90,43 +90,42 @@ body {
 
 .info-text {
     font-family: 'Satoshi';
-    font-size: 1.3rem;
-    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+    font-size: 24px;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7));
     margin: 0;
 }
 
 .location {
-    margin-top: 2rem;
+    margin-top: 20px;
 }
 
 .location-text {
-    font-size: 1.3rem;
+    font-size: 20px;
     font-family: 'Satoshi';
     font-weight: 600;
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
 }
 
 .svg-location {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 4%;
+    height: 4%;
     filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
 }
 
 .audio-player {
     background: linear-gradient(0deg, #000000ad, #2b2b2bad);
-    padding: 1rem;
-    border-radius: 1rem;
+    padding: 20px;
+    border-radius: 20px;
     display: flex;
     align-items: center;
-    width: 35rem;
-    box-shadow: 0 0 1rem rgb(0, 0, 0);
-    backdrop-filter: blur(0.5rem);
+    width: 100%;
+    box-shadow: 0 0 5px rgb(0, 0, 0);
+    backdrop-filter: blur(10px);
 }
 
 .audio-icon {
-    width: 5rem;
-    height: 5rem;
-    margin-right: 1rem;
+    width: 15%;
+    margin-right: 10px;
     border-radius: 0.5rem;
     filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
     user-select: none;
@@ -137,7 +136,7 @@ body {
     flex-grow: 1;
     display: flex;
     align-items: center;
-    padding-top: 2.3rem;
+    padding-top: 7%;
 }
 
 .player-controls {
@@ -148,18 +147,18 @@ body {
 
 .progress-bar {
     flex-grow: 1;
-    height: 0.5rem;
+    height: 7px;
     background: #333;
-    border-radius: 0.15rem;
-    margin: 0 0.5rem;
+    border-radius: 3px;
+    margin: 0 5px;
     position: relative;
 }
 
 .sound-name {
     position: absolute;
-    left: 7rem;
-    top: 2rem;
-    font-size: 1.5rem;
+    left: 19%;
+    top: 30%;
+    font-size: 26px;
     font-family: 'Satoshi';
     font-weight: 600;
     filter: drop-shadow(0 2px 5px rgba(255, 255, 255, 0.3));;
@@ -175,9 +174,9 @@ body {
 
 .time {
     font-family: 'Satoshi';
-    font-size: 1.1rem;
+    font-size: 16px;
     color: #b3b3b3;
-    min-width: 2rem;
+    min-width: 20px;
     text-align: center;
 }
 
@@ -185,12 +184,12 @@ button {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0.5rem;
+    padding: 5px;
 }
 
 .player-btn {
-    width: 1.3rem;
-    height: 1.3rem;
+    width: 20px;
+    height: 20px;
     filter: brightness(1);
     transition: filter 0.3s ease, transform 0.3s ease;
 }
