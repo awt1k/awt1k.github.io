@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <canvas id="snowCanvas"></canvas>
     <div class="container">
         <div class="profile-card">
             <div class="profile-pic-wrapper">
@@ -16,6 +17,7 @@
             </div>
             <div class="username-div" id="username">
                 <h1 class="username">awtik</h1>
+                <img src="assets/particles.gif" class="username-particles" alt="">
             </div>
             <div class="info">
                 <h3 class="info-text">Junior desktop-developer</h3>
@@ -26,13 +28,13 @@
             </div>
         </div>
         <div class="audio-player">
+            <span class="sound-name">Walz-Ocean</span>
             <img src="assets/music.jpg" alt="Audio Icon" class="audio-icon">
             <div class="custom-player">
                 <audio id="audio" src="assets/track.mp3"></audio>
                 <div class="player-controls">
                     <span class="time" id="current-time">0:00</span>
                     <div class="progress-bar" id="progress-bar">
-                        <span class="sound-name">Walz-Ocean</span>
                         <div class="progress" id="progress"></div>
                     </div>
                     <span class="time" id="duration">0:00</span>
@@ -101,5 +103,6 @@
             return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
         }
     </script>
+    <script src="script.js"></script>
 </body>
 </html>
