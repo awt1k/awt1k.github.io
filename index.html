@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>awtik Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Hedera&display=swap" rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@1&f[]=array@400&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="profile-card">
+            <div class="profile-pic-wrapper">
+                <img src="assets/avatar.jpg" alt="Profile Picture" class="profile-pic">
+            </div>
+            <div class="username-div" id="username">
+                <h1 class="username">awtik</h1>
+            </div>
+            <div class="info">
+                <h3 class="info-text">Junior desktop-developer</h3>
+            </div>
+            <div class="location">
+                <svg class="svg-location" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="4 2 16 20"><path fill="currentColor" d="M12 12q.825 0 1.413-.587T14 10t-.587-1.412T12 8t-1.412.588T10 10t.588 1.413T12 12m0 10q-4.025-3.425-6.012-6.362T4 10.2q0-3.75 2.413-5.975T12 2t5.588 2.225T20 10.2q0 2.5-1.987 5.438T12 22"></path></svg>
+                <span class="location-text">Russia</span>
+            </div>
+        </div>
+        <div class="audio-player">
+            <img src="assets/music.jpg" alt="Audio Icon" class="audio-icon">
+            <div class="custom-player">
+                <audio id="audio" src="assets/track.mp3"></audio>
+                <div class="player-controls">
+                    <span class="time" id="current-time">0:00</span>
+                    <div class="progress-bar" id="progress-bar">
+                        <span class="sound-name">Walz-Ocean</span>
+                        <div class="progress" id="progress"></div>
+                    </div>
+                    <span class="time" id="duration">0:00</span>
+                    <button id="rewind">
+                        <img class="player-btn" src="assets/left.png" alt="">
+                    </button>
+                    <button id="play-pause">
+                        <img class="player-btn" src="assets/play.png" alt="" id="play-btn">
+                    </button>
+                    <button id="forward">
+                        <img class="player-btn" src="assets/right.png" alt="">
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Custom Audio Player
+        const audio = document.getElementById('audio');
+        const playPauseBtn = document.getElementById('play-btn');
+        const rewindBtn = document.getElementById('rewind');
+        const forwardBtn = document.getElementById('forward');
+        const progressBar = document.getElementById('progress-bar');
+        const progress = document.getElementById('progress');
+        const currentTimeEl = document.getElementById('current-time');
+        const durationEl = document.getElementById('duration');
+
+        audio.addEventListener('loadedmetadata', () => {
+            durationEl.textContent = formatTime(audio.duration);
+        });
+
+        audio.addEventListener('timeupdate', () => {
+            const percent = (audio.currentTime / audio.duration) * 100;
+            progress.style.width = percent + '%';
+            currentTimeEl.textContent = formatTime(audio.currentTime);
+        });
+
+        playPauseBtn.addEventListener('click', () => {
+            if (audio.paused) {
+                audio.play();
+                playPauseBtn.src = 'assets/pause.png';
+            } else {
+                audio.pause();
+                playPauseBtn.src = 'assets/play.png';
+            }
+        });
+
+        rewindBtn.addEventListener('click', () => {
+            audio.currentTime -= 10;
+        });
+
+        forwardBtn.addEventListener('click', () => {
+            audio.currentTime += 10;
+        });
+
+        progressBar.addEventListener('click', (e) => {
+            const rect = progressBar.getBoundingClientRect();
+            const pos = (e.clientX - rect.left) / rect.width;
+            audio.currentTime = pos * audio.duration;
+        });
+
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+        }
+    </script>
+</body>
+</html>
